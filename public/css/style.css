@@ -1,0 +1,73 @@
+.gb-primary.btn {
+    border-width: 1px;
+    border-color: rgba(104, 112, 226, .09);
+    background-color: rgba(1, 1, 1, .09);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+        , 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.gb-primary.btn:active {
+    border-width: 2px;
+    border-color: rgba(1, 1, 1, .09);
+    background-color: rgba(104, 112, 226, 0.09);
+}
+
+.gb-primary.card {
+    background-color: rgba(1, 1, 1, .09);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+        , 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: left;
+}
+
+.gb-primary.jumbotron {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+        , 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: left;
+}
+
+.gb-primary.jumbotron > * {
+    background: -webkit-linear-gradient(-60deg
+        , lightblue, rgb(147, 183, 196), black, black, black, black, black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background: -moz-linear-gradient(-60deg
+        , lightblue, rgb(147, 183, 196), black, black, black, black, black);
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+@media screen and (min-width: 1200px) {
+    .gb-primary.jumbotron  {
+        text-align: center;
+    }
+
+    .gb-primary.jumbotron > * {
+        background: -webkit-linear-gradient(-88deg
+            , lightblue, black, black);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background: -moz-linear-gradient(-88deg
+            , lightblue, black, black);
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+    }
+} 
+
+.gb-primary.navbar-toggler {
+    border-width: 1px;
+    border-color: rgba(104, 112, 226, .09);
+    background-color: rgba(1, 1, 1, .09);
+    
+}
+
+.gb-primary.navbar-toggler:active {
+    border-width: 2px;
+    border-color: rgba(104, 112, 226, .09);
+    background-color: rgba(104, 112, 226, 0.09);
+}
+
+.gb-primary.navbar-toggler:focus {
+    border: 2px solid rgba(104, 112, 226, .13);
+    background-color: rgba(104, 112, 226, 0.09);
+}

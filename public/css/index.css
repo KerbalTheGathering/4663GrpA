@@ -1,0 +1,42 @@
+.jumbotron  {
+    padding-top: 180px;
+    margin-bottom: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-image: url("../img/KerbanCurve.png");
+    background-size: cover;
+    color: ghostwhite;
+    opacity: .95;
+}
+
+@media screen and (max-width: 565px) {
+    
+    .jumbotron {
+        background-size: fill;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    
+    .jumbotron {
+        background-size: fill;
+    }
+}
+
+.container {
+    align-content: center;
+}
+
+#bio-cards > .row > .card {
+    margin: 5px;
+}
+
+#portals > .row > .btn {
+    margin: 5px;
+}
+
+#portals {
+}
+
+footer {
+    text-align: center;
+}

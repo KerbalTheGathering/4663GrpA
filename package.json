@@ -1,0 +1,32 @@
+{
+  "name": "Group A",
+  "version": "1.0.0",
+  "description": "Project PWA",
+  "main": "index.js",
+  "author": "Group A",
+  "license": "MIT",
+  "scripts": {
+    "start": "grunt serve",
+    "test": "grunt"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.3.1",
+    "grunt-cli": "^1.3.2",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
+    "yarn": "^1.16.0"
+  },
+  "devDependencies": {
+    "express": "^4.17.1",
+    "grunt": "^1.0.4",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-eslint": "^21.0.0",
+    "grunt-express-server": "^0.5.4",
+    "jsdom": "^15.1.1",
+    "lodash": "^4.17.11",
+    "lowdb": "^1.0.0",
+    "moment": "^2.24.0",
+    "web-push": "^3.3.5"
+  }
+}
