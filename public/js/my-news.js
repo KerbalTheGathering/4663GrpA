@@ -6,7 +6,7 @@ $(document).ready( () =>
 
 var populateMyNews = () => 
 {
-    getMyNews().then(renderMyNews);
+    //getMyNews().then(renderMyNews);
 };
 
 var renderMyNews = (stories) =>

@@ -1,9 +1,9 @@
 {
-  "name": "Group A",
+  "name": "group-a",
   "version": "1.0.0",
   "description": "Project PWA",
   "main": "index.js",
-  "author": "Group A",
+  "author": "",
   "license": "MIT",
   "scripts": {
     "start": "grunt serve",
