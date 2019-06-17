@@ -30,7 +30,7 @@ module.exports = (grunt) =>
             web: {
                 options: {
                 script: "server/index.js",
-                port: 8443
+                port: 4663
                 }
             }
         }
