@@ -1,4 +1,4 @@
-var CACHE_NAME = "home-cache-v0.0.1";
+var CACHE_NAME = "index-cache-v0.0.1";
 var immutableRequests = 
 [
     "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js",
@@ -66,7 +66,7 @@ self.addEventListener("activate", (event) =>
             return Promise.all(
                 cacheNames.map((cacheName) =>
                 {
-                    if (CACHE_NAME !== cacheName && cacheName.startsWith("home"))
+                    if (CACHE_NAME !== cacheName && cacheName.startsWith("index"))
                     {
                         return caches.delete(cacheName);
                     }
