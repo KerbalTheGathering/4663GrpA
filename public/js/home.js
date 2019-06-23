@@ -1,6 +1,6 @@
 if("serviceWorker" in navigator)
 {
-    navigator.serviceWorker.register("../pages/home_serviceworker.js")
+    navigator.serviceWorker.register("/pages/homepage/home_serviceworker.js")
     .then((registration) =>
     {
         console.log("Homepage serviceworker registered with scope: ", registration.scope);
