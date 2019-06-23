@@ -4,10 +4,10 @@ var immutableRequests =
     "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js",
     "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
     "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js",
-    "./css/index.css",
-    "./css/style.css",
-    "./app.js",
-    "./index.js",
+    "/css/index.css",
+    "/css/style.css",
+    "/app.js",
+    "/index.js",
 ];
 var mutableRequests = 
 [
@@ -50,7 +50,7 @@ self.addEventListener("fetch", (event) =>
             {
                 return cachedResponse || fetch(event.request).then((networkResponse) =>
                 {
-                    cache.put(event.request, networkResponse.clone());
+                    //cache.put(event.request, networkResponse.clone());
                     return networkResponse;
                 });
             });

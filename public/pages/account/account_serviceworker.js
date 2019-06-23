@@ -1,14 +1,9 @@
 var CACHE_NAME = "account-cache-v0.0.1";
 var immutableRequests = 
 [
-    "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js",
-    "/css/index.css",
-    "/css/style.css",
-    "/js/home.js",
-    "/index.js",
-    "account.html",
+    "/css/account.css",
+    "/js/account.js",
+    "/pages/account/account.html",
 ];
 
 var mutableRequests = 
@@ -45,14 +40,20 @@ self.addEventListener("install", (event) =>
 self.addEventListener("fetch", (event) => 
 {
     event.respondWith(
-        caches.open(CACHE_NAME).then((cache) =>
+        caches.open("index-cache-v0.0.1").then((cache) =>
         {
             return cache.match(event.request).then((cachedResponse) =>
             {
-                return cachedResponse || fetch(event.request).then((networkResponse) =>
+                return cachedResponse || caches.open(CACHE_NAME).then((cache) =>
                 {
-                    cache.put(event.request, networkResponse.clone());
-                    return networkResponse;
+                    return cache.match(event.request).then((cachedResponse) =>
+                    {
+                        return cachedResponse || fetch(event.request).then((networkResponse) =>
+                        {
+                            cache.put(event.request, networkResponse.clone());
+                            return networkResponse;
+                        });
+                    });
                 });
             });
         })
@@ -67,7 +68,7 @@ self.addEventListener("activate", (event) =>
             return Promise.all(
                 cacheNames.map((cacheName) =>
                 {
-                    if (CACHE_NAME !== cacheName && cacheName.startsWith("home"))
+                    if (CACHE_NAME !== cacheName && cacheName.startsWith("account"))
                     {
                         return caches.delete(cacheName);
                     }
