@@ -3,7 +3,7 @@ body {
     padding-bottom: 3rem;
     color: #5a5a5a;
   }
-
+  
   .carousel {
     margin-bottom: 4rem;
   }
@@ -81,8 +81,26 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    background-image: url(https://ak8.picdn.net/shutterstock/videos/7613368/thumb/1.jpg);
     }
 
+.article-image1{
+      width: 500px;
+      height: 500px;
+      background-repeat: no-repeat;
+      background-image: url(https://media.istockphoto.com/photos/shot-of-a-squad-of-soldiers-running-forward-and-atacking-enemy-during-picture-id814367472?k=6&m=814367472&s=612x612&w=0&h=bXFRgEqu8mHSy7fMv8uRVbjfYJKRAR24PRfUF09zrmk=);
+    }
+.article-image2{
+
+      background-repeat: no-repeat;
+      background-image: url(https://media.gettyimages.com/photos/lion-in-high-grass-picture-id494856046?s=612x612);
+    }
+
+.article-image3{
+
+  background-repeat: no-repeat;
+  background-image: url(https://asset.barrons.com/public/resources/images/ON-CB801_chip_B620_20170405183838.jpg)
+}
     @media (min-width: 768px) {
     .bd-placeholder-img-lg {
         font-size: 3.5rem;

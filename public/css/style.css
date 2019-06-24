@@ -1,7 +1,7 @@
 .gb-primary.btn {
     border-width: 1px;
     border-color: rgba(104, 112, 226, .09);
-    background-color: rgba(1, 1, 1, .09);
+    background-color: rgba(65, 118, 180);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
         , 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
@@ -71,3 +71,49 @@
     border: 2px solid rgba(104, 112, 226, .13);
     background-color: rgba(104, 112, 226, 0.09);
 }
+
+nav{
+    color: white;
+    background-color: rgb(47, 118, 185);
+    
+}
+
+
+.navbar-light .navbar-nav .nav-link{
+    color: white;
+
+}
+.navbar-nav li> a:hover{
+
+    color: lightskyblue !important;
+}
+
+.bg-carousel{
+    background-color:  rgb(38, 98, 152);
+  
+  }
+
+footer{
+    color: white;
+    background-color: rgb(47, 118, 185);
+    padding: 10px 0px 2.5px 0px;
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+footer a{
+    color: white;
+}
+footer a:hover{
+    text-decoration: none;
+    color: lightskyblue;
+}
+.btn-color{
+
+    background-color: rgb(65,118,180);
+ }
+ div p > a:hover{
+     background-color: lightskyblue !important;
+ }
