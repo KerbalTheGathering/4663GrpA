@@ -1,18 +1,4 @@
 (($) => {          
-    // fades the navbar with user scroll
-    $(document).ready(function(){                    
-        $(window).scroll(function(){                          
-            if ($(this).scrollTop() < 100) {
-                $('.navbar').fadeIn(500);
-            }
-        });
-        $(window).scroll(function(){                          
-            if ($(this).scrollTop() > 150) {
-                $('.navbar').fadeOut(500);
-            }
-        });
-    });
-
     $(document).ready(() =>
     {
         var carouselTemplate = $('#carousel-template').html();
@@ -38,8 +24,11 @@
             var article = $(articleTemplate).clone();
             $(article).find('#article-heading').html("Article headline #" + j + "<br/><span class=\"text-muted\"> Here's a catchy hook to lure you in</span>");
             $(article).find('#article-lead').html("This is the lead in for the article");
+            //We may need to find a better way to set the img then through the css.
+            var img = j + 1;
+            $(article).find('#article-img').addClass('article-image' + img);
 
-            $('#article-container').append(article);
+            $('.breaking').append(article);
             console.log("appended article " + j);
         }
     });
