@@ -64,6 +64,37 @@
             "savedArticles": [
                 "2", "3", "4"
             ]
+        },
+        {
+            "id": "devStandard",
+            "name": "Alan Shepard",
+            "feeds": [
+                "Politics", 
+                "World"
+            ],
+            "savedArticles": [
+                "1", "4", "3", "5"
+            ]
+        },
+        {
+            "id": "0",
+            "name": "Buzz Aldrin",
+            "feeds": [
+                "Tech&Science"
+            ],
+            "savedArticles": [
+                
+            ]
+        },
+        {
+            "id": "1",
+            "name": "Niel Armstrong",
+            "feeds": [
+                
+            ],
+            "savedArticles": [
+                
+            ]
         }
     ]
 }
