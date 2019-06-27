@@ -41,42 +41,48 @@
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">Profile</h4>
                 </div>
-                <div class="card-body">
-                    <ul class="list-unstyled mt-3 mb-4">
-                    <li>"Name"</li>
-                    <li>"Followed Topics Count"</li>
-                    <li>"Saved Stories Count"</li>
-                    <li>"Notifications toggle"</li>
-                    </ul>
-                    <button type="button" class="btn btn-lg btn-block btn-primary disabled">Sign up for free</button>
+                <div id="profile-body" class="card-body">
+                    <script id="profile-template" type="text/profile-template">
+                        <div>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li id="prof-name"></li>
+                                <li id="prof-topic-count"></li>
+                                <li id="prof-saved-count"></li>
+                                <li id="prof-notif-toggle"></li>
+                            </ul>
+                           <button id="prof-btn" type="button" class="btn btn-lg btn-block btn-primary"><span></span></button>
+                        </div>
+                    </script>
                 </div>
             </div>
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">News Feeds</h4>
                 </div>
-                <div class="card-body">
-                    <ul class="list-unstyled mt-3 mb-4">
-                    <li>Topic</li>
-                    <li>Topic</li>
-                    <li>Topic</li>
-                    <li>Topic</li>
-                    </ul>
-                    <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
+                <div id="feed-body" class="card-body">
+                    <script id="feed-template" type="text/feed-template">
+                        <div>
+                            <ul id="feed-list" class="list-unstyled mt-3 mb-4">
+                                <li id="feed-none">None</li>
+                            </ul>
+                           <button id="feed-btn" type="button" class="btn btn-lg btn-block btn-primary"><span></span></button>
+                        </div>
+                    </script>
                 </div>
             </div>
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">Saved Stories</h4>
                 </div>
-                <div class="card-body">
-                    <ul class="list-unstyled mt-3 mb-4">
-                        <li><a href="#">story</a></li>
-                        <li><a href="#">story</a></li>
-                        <li><a href="#">story</a></li>
-                        <li><a href="#">story</a></li>
-                    </ul>
-                    <button type="button" class="btn btn-lg btn-block btn-primary disabled">Go To Homepage</button>
+                <div id="saved-body" class="card-body">
+                    <script id="saved-template" type="text/saved-template">
+                        <div>
+                            <ul id="saved-list" class="list-unstyled mt-3 mb-4">
+                                
+                            </ul>
+                            <button id="saved-btn" type="button" class="btn btn-lg btn-block btn-primary"><span></span></button>
+                        </div>
+                    </script>
                 </div>
             </div>
         </div>
@@ -89,7 +95,7 @@
 <script src="/js/common/navbar.js"></script>
 </body>
 <footer>
-        <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2017-2019 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-    </footer>
+    <p class="float-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2017-2019 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
 </html>
