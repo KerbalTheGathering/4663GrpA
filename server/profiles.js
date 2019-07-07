@@ -2,14 +2,13 @@ var db = require("./db.js");
 
 var get = () =>
 {
-    var profiles = db.get("profiles")
-        .value();
+    let profiles = db.get("profiles").value();
     return profiles;
 };
 
 var getById = (id) =>
 {
-    var profile = db.get("profiles")
+    let profile = db.get("profiles")
         .filter({id: id})
         .value();
     return profile[0] || undefined;
@@ -17,7 +16,7 @@ var getById = (id) =>
 
 var getFeeds = (id) =>
 {
-    var profile = db.get("profiles")
+    let profile = db.get("profiles")
         .filter({id: id})
         .value();
     return profile[0].feeds;
@@ -25,7 +24,7 @@ var getFeeds = (id) =>
 
 var getSavedArticles = (id) =>
 {
-    var profile = db.get("profiles")
+    let profile = db.get("profiles")
         .filter({id: id})
         .value();
     return profile[0].getSavedArticles;

@@ -4,7 +4,7 @@ $(document).ready( () =>
 
 });
 
-var populateMyNews = () => 
+var populateMyNews = function()
 {
     //getMyNews().then(renderMyNews);
 };

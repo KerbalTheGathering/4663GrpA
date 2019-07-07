@@ -1,12 +1,14 @@
-const low = require("lowdb");
-const db = low("server/db.json");
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
+const adapter = new FileSync('./server/db.json');
+const db = low(adapter);
 
 // Populate database with data
 db
     .defaults(
     {
-        articles: require("./fixtures/articles.js"),
-        profiles: require("./fixtures/profiles.js")
+        articles: require("./articles.js"),
+        profiles: require("./profiles.js")
     })
     .value();
 
