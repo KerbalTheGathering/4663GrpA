@@ -1,0 +1,22 @@
+{
+    "short_name": "4663GrpA",
+    "name": "COP4663 Group A PWA (Nikkei)",
+    "description": "PWA created based on Nikkei PWA Case Study",
+    "start_url": "./pages/homepage/homepage.html?utm_source=pwa",
+    "scope": "/",
+    "display": "fullscreen",
+    "icons": [
+        {
+            "src": "",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "theme-color": "",
+    "background-color": ""
+}
