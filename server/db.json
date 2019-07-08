@@ -1,0 +1,100 @@
+{
+    "articles": [
+        {
+            "id": "0",
+            "headline": "Military drills this month",
+            "hook": "Our neighbors' reactions",
+            "leadIn": "We talked to leading diplomats to deliver to you a comprehensive guide on the current situation.",
+            "articleText": "",
+            "buttonText": "Read more"
+        },
+        {
+            "id": "1",
+            "headline": "Lion tracked by poachers, eats poachers",
+            "hook": "Poachers killed lion's dog.",
+            "leadIn": "You won't believe this story coming out of the San Diego Zoo.",
+            "articleText": "",
+            "buttonText": "Chow down"
+        },
+        {
+            "id": "2",
+            "headline": "Texas Instruments Announces New Plug-And-Play TI-83 Classic",
+            "hook": "Get ready for a blast of nostalgia!",
+            "leadIn": "At $79.99, it's cheaper than the original, finally.",
+            "articleText": "",
+            "buttonText": "Calculate This",
+            "articleUrl": "https://ogn.theonion.com/texas-instruments-announces-new-plug-and-play-ti-83-cla-1835615433"
+        },
+        {
+            "id": "3",
+            "headline": "Bolton Calls For Forceful Iranian Response To Continuing U.S. Aggression",
+            "hook": "National Security Adviser John Bolton called for a forceful Iranian response",
+            "leadIn": "Iran cannot sit idly by as the American imperialist machine encroaches on their territory, threatens their sovereignty, and endangers their very way of life",
+            "articleText": "",
+            "buttonText": "More ahead",
+            "articleUrl": "https://politics.theonion.com/bolton-calls-for-forceful-iranian-response-to-continuin-1835735060"
+        },
+        {
+            "id": "4",
+            "headline": "Man Ruthlessly Scolds Other Man Online For Having Opinion He Held Less Than 2 Years Ago",
+            "hook": "a total stooge",
+            "leadIn": "25-year-old Brian Gallagher ruthlessly scolded another man online Wednesday for having an opinion identical to one he held less than two years prior.",
+            "articleText": "",
+            "buttonText": "Read on",
+            "articleUrl": "https://local.theonion.com/man-ruthlessly-scolds-other-man-online-for-having-opini-1835869922"
+        },
+        {
+            "id": "5",
+            "headline": "Agent Asks Failing Actor If He has Considered Becoming Alt-Right Commentator",
+            "hook": "Agent Brendon Lourde asked struggling actor Greg Hartley Thursday",
+            "leadIn": "I think there’s some real demand for a middle-aged performer like you to start up a podcast where you, say, tear into political correctness while chatting with a few guests from the alt-right sphere.",
+            "articleText": "",
+            "buttonText": "Find out more",
+            "articleUrl": "https://entertainment.theonion.com/agent-asks-failing-actor-if-he-s-considered-becoming-al-1835304778"
+        }
+    ],
+    "profiles": [
+        {
+            "id": "devAdmin",
+            "name": "John Glenn",
+            "feeds": [
+                "Tech&Science", 
+                "World"
+            ],
+            "savedArticles": [
+                "2", "3", "4"
+            ]
+        },
+        {
+            "id": "devStandard",
+            "name": "Alan Shepard",
+            "feeds": [
+                "Politics", 
+                "World"
+            ],
+            "savedArticles": [
+                "1", "4", "3", "5"
+            ]
+        },
+        {
+            "id": "0",
+            "name": "Buzz Aldrin",
+            "feeds": [
+                "Tech&Science"
+            ],
+            "savedArticles": [
+                
+            ]
+        },
+        {
+            "id": "1",
+            "name": "Neil Armstrong",
+            "feeds": [
+                
+            ],
+            "savedArticles": [
+                
+            ]
+        }
+    ]
+}

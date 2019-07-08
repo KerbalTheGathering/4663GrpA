@@ -1,5 +1,5 @@
 var DB_VERSION = 1;
-var DB_NAME = "local";
+var DB_NAME = "my-news";
 
 var openDatabase = () => 
 {
@@ -71,7 +71,7 @@ var updateInObjectStore = (storeName, id, object) =>
                     var cursor = event.target.result;
                     if (!cursor)
                     {
-                        reject("# note found in object store");
+                        reject("# not found in object store");
                     }
                     if (cursor.value.id === id)
                     {
@@ -87,13 +87,13 @@ var updateInObjectStore = (storeName, id, object) =>
     });
 };
 
-var getMyNews = () =>
+var getMyNews = (successCallback) =>
 {
     return new Promise((resolve) =>
     {
         openDatabase().then((db) =>
         {
-            var objectStore = openObjectStore(db, "my-news");
+            var objectStore = openObjectStore(db, "articles");
             var myNews = [];
             objectStore.openCursor().onsuccess = (event) =>
             {
@@ -111,7 +111,7 @@ var getMyNews = () =>
                         {
                             openDatabase().then((db) => 
                             {
-                                var objectStore = openObjectStore(db, "myNews", "readwrite");
+                                var objectStore = openObjectStore(db, "articles", "readwrite");
                                 for(var i = 0; i < myNews.length; i++)
                                 {
                                     objectStore.add(myNews[i]);
@@ -136,14 +136,18 @@ var getMyNewsFromServer = () =>
 {
     return new Promise((resolve) =>
     {
-        if (self.$)
+        if (self.$) 
         {
-            $.getJSON("/myNews.json").then((response) =>
+            $.getJSON("/articles.json", resolve);
+        } 
+        else if (self.fetch) 
+        {
+            fetch("articles.js").then((response) =>
             {
                 return response.json();
-            }).then((news) =>
+            }).then((articles) =>
             {
-                resolve(news);
+                resolve(articles);
             });
         }
     });

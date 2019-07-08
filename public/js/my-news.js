@@ -4,9 +4,10 @@ $(document).ready( () =>
 
 });
 
-var populateMyNews = () => 
+var populateMyNews = function()
 {
-    //getMyNews().then(renderMyNews);
+    $.getJSON("/articles.json", renderMyNews);
+    getMyNews(renderMyNews);
 };
 
 var renderMyNews = (stories) =>
@@ -20,5 +21,5 @@ var renderMyNews = (stories) =>
 
 var renderStory = (story) =>
 {
-
+    console.log("Render Story: " + story.headline);
 };
