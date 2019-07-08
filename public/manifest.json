@@ -7,16 +7,17 @@
     "display": "fullscreen",
     "icons": [
         {
-            "src": "",
+            "src": "./img/010-newspaper.png",
             "type": "image/png",
             "sizes": "192x192"
         },
         {
-            "src": "",
+            "src": "./img/010-newspaper.png",
             "type": "image/png",
             "sizes": "512x512"
         }
     ],
-    "theme-color": "",
-    "background-color": ""
+    "orientation": "portrait",
+    "theme-color": "rgb(47, 118, 185)",
+    "background-color": "rgb(47, 118, 185)"
 }

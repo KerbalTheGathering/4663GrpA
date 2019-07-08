@@ -71,7 +71,7 @@ var updateInObjectStore = (storeName, id, object) =>
                     var cursor = event.target.result;
                     if (!cursor)
                     {
-                        reject("# note found in object store");
+                        reject("# not found in object store");
                     }
                     if (cursor.value.id === id)
                     {
@@ -87,7 +87,7 @@ var updateInObjectStore = (storeName, id, object) =>
     });
 };
 
-var getMyNews = function() 
+var getMyNews = (successCallback) =>
 {
     return new Promise((resolve) =>
     {
@@ -138,11 +138,11 @@ var getMyNewsFromServer = () =>
     {
         if (self.$) 
         {
-            $.getJSON("db.json", resolve);
+            $.getJSON("/articles.json", resolve);
         } 
         else if (self.fetch) 
         {
-            fetch("db.js").then((response) =>
+            fetch("articles.js").then((response) =>
             {
                 return response.json();
             }).then((articles) =>
