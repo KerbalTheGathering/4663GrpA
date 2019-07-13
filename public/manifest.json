@@ -17,7 +17,16 @@
             "sizes": "512x512"
         }
     ],
+    "dir": "auto",
     "orientation": "portrait",
-    "theme-color": "rgb(47, 118, 185)",
-    "background-color": "rgb(47, 118, 185)"
+    "theme-color": "#2F90B9",
+    "background-color": "#2F90B9",
+    "lang": "en-US",
+    "prefer_related_applications": false,
+    "related_applications": [
+        {
+            "platform": "play",
+            "id": "com.someCompany.4663GrpA"
+        }
+    ]
 }

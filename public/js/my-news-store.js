@@ -87,7 +87,7 @@ var updateInObjectStore = (storeName, id, object) =>
     });
 };
 
-var getMyNews = (successCallback) =>
+function getMyNews (successCallback)
 {
     return new Promise((resolve) =>
     {
@@ -130,7 +130,7 @@ var getMyNews = (successCallback) =>
             });
         });
     });
-};
+}
 
 var getMyNewsFromServer = () =>
 {

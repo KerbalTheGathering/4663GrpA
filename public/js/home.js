@@ -14,6 +14,8 @@ if("serviceWorker" in navigator)
 {
     $(document).ready(() =>
     {
+        populateMyNews();
+
         var carouselTemplate = $('#carousel-template').html();
 
         for (var i = 0; i < 3; i++)
@@ -44,3 +46,23 @@ if("serviceWorker" in navigator)
         }
     });
 })(jQuery);
+
+var populateMyNews = () =>
+{
+    //$.getJSON("/articles.json", renderMyNews);
+    this.getMyNews().then(renderMyNews);
+};
+
+var renderMyNews = (stories) =>
+{
+    $("div#news-loading").hide();
+    stories.forEach((story) => 
+    {
+        renderStory(story);
+    });
+};
+
+var renderStory = (story) =>
+{
+    console.log("Render Story: " + story.headline);
+};
