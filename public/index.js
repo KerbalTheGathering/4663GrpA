@@ -1,4 +1,4 @@
-(($) => {          
+//(($) => {          
     $(document).ready(() =>
     {
         var carouselTemplate = $('#carousel-template').html();
@@ -32,4 +32,4 @@
             console.log("appended article " + j);
         }
     });
-})(jQuery);
+//})(jQuery);

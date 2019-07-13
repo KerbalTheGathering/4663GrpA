@@ -7,7 +7,7 @@ $(document).ready( () =>
 var populateMyNews = function()
 {
     $.getJSON("/articles.json", renderMyNews);
-    getMyNews(renderMyNews);
+    //getMyNews(renderMyNews);
 };
 
 var renderMyNews = (stories) =>
