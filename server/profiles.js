@@ -16,10 +16,11 @@ var getById = (id) =>
 
 var getFeeds = (id) =>
 {
-    let profile = db.get("profiles")
+    let feeds = db.get("profiles")
         .filter({id: id})
+        .get("feeds")
         .value();
-    return profile[0].feeds;
+    return feeds;
 };
 
 var getSavedArticles = (id) =>
@@ -30,9 +31,20 @@ var getSavedArticles = (id) =>
     return profile[0].getSavedArticles;
 };
 
+var addToFeeds = (id, topic) =>
+{
+    let feeds = db.get("profiles")
+        .filter({id: id})
+        .get("feeds")
+        .push(topic)
+        .value();
+    return feeds;
+};
+
 module.exports = {
     get: get,
     getById: getById,
     getFeeds: getFeeds,
+    addToFeeds: addToFeeds,
     getSavedArticles: getSavedArticles
 };

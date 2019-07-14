@@ -1,6 +1,7 @@
 var CACHE_NAME = "index-cache-v0.0.1";
 var CACHED_URLS = 
 [
+    "manifest.json",
     //HTML
     "/index.html",
     //CSS
@@ -11,6 +12,7 @@ var CACHED_URLS =
     "/index.js",
     "/js/my-news.js",
     "/js/my-news-store.js",
+    "/js/common/navbar.js",
     "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js",
     "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
     "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js",

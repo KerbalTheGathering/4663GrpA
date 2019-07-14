@@ -1,13 +1,10 @@
 var CACHE_NAME = "account-cache-v0.0.1";
 var immutableRequests = 
 [
+    "manifest.json",
     "/css/account.css",
     "/js/account.js",
     "/pages/account/account.html",
-];
-
-var mutableRequests = 
-[
 ];
 
 self.addEventListener("install", (event) =>
@@ -31,7 +28,7 @@ self.addEventListener("install", (event) =>
                 })
             ).then(() =>
             {
-                return cache.addAll(newImmutableRequests.concat(mutableRequests));
+                return cache.addAll(newImmutableRequests);
             });
         })
     );
