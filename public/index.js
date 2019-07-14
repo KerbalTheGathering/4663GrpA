@@ -33,3 +33,43 @@
         }
     });
 //})(jQuery);
+
+var addTopicSubscription = function(userId, topic)
+{
+    var topicSubDetails = {
+        id:     userId,
+        topic:  topic
+    };
+    addToObjectStore("")
+};
+
+var showNewNewsNotification = function() 
+{
+    navigator.serviceWorker.ready.then(function(newsReg)
+    {
+        newsReg.showNotification("Subscribed to new topic!",
+        {
+            body:
+                "You are now subscribed to receive notifications\n" +
+                "from a new topic.",
+            icon: "",
+            badge: "",
+            tag: "new-subscription"
+        });
+    });
+};
+
+var offerNotification = function() 
+{
+    if("Notification" in window
+        && "serviceWorker" in navigator) 
+        {
+            Notification.requestPermission().then(function(permission)
+            {
+                if(permission === "granted")
+                {
+                    //Show News notification
+                }
+            });
+        }
+};
