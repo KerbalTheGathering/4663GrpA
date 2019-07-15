@@ -1,12 +1,12 @@
-var db = require("./db.js");
+let db = require("./db.js");
 
-var get = () =>
+var get = function()
 {
     let articles = db.get("articles").value();
     return articles;
 };
 
-var getById = (id) =>  
+var getById = function(id)  
 {
     let article = db.get("articles")
         .filter({id: id})

@@ -10,6 +10,7 @@ var CACHED_URLS =
     //Javascript
     "/app.js",
     "/index.js",
+    "/js/my-account-store.js",
     "/js/my-news.js",
     "/js/my-news-store.js",
     "/js/common/navbar.js",
@@ -75,6 +76,21 @@ self.addEventListener("fetch", (event) =>
             })
         );
     } else if (requestURL.pathname === "/articles.json")
+    {
+        event.respondWith(
+            caches.open(CACHE_NAME).then((cache) =>
+            {
+                return fetch(event.request).then((networkResponse) =>
+                {
+                    cache.put(event.request, networkResponse.clone());
+                    return networkResponse;
+                }).catch(() =>
+                {
+                    return caches.match(event.request);
+                });
+            })
+        );
+    } else if (requestURL.pathname === "/profiles.json")
     {
         event.respondWith(
             caches.open(CACHE_NAME).then((cache) =>

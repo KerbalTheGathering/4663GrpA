@@ -40,7 +40,7 @@ var addTopicSubscription = function(userId, topic)
         id:     userId,
         topic:  topic
     };
-    addToObjectStore("")
+    //addToObjectStore("")
 };
 
 var showNewNewsNotification = function() 

@@ -1,10 +1,12 @@
-var db = require("./db.js");
+let db = require("./db.json");
+let _ = require('lodash');
 
-var get = () =>
+function getProfiles ()
 {
-    let profiles = db.get("profiles").value();
+    let profiles = _.mapValues(db, 'profiles').value();
+    console.log(profiles.value());
     return profiles;
-};
+}
 
 var getById = (id) =>
 {
@@ -14,13 +16,18 @@ var getById = (id) =>
     return profile[0] || undefined;
 };
 
-var getFeeds = (id) =>
+var getFeeds = function(id)
 {
+    console.log(db);
+    console.log(_.findKey(db.get(), function(f) 
+    {
+        return f.id === id;
+    }));
     let feeds = db.get("profiles")
         .filter({id: id})
         .get("feeds")
         .value();
-    return feeds;
+    return feeds || undefined;
 };
 
 var getSavedArticles = (id) =>
@@ -28,7 +35,7 @@ var getSavedArticles = (id) =>
     let profile = db.get("profiles")
         .filter({id: id})
         .value();
-    return profile[0].getSavedArticles;
+    return profile[0].SavedArticles;
 };
 
 var addToFeeds = (id, topic) =>
@@ -38,11 +45,11 @@ var addToFeeds = (id, topic) =>
         .get("feeds")
         .push(topic)
         .value();
-    return feeds;
+    return feeds[0] || undefined;
 };
 
 module.exports = {
-    get: get,
+    get: getProfiles,
     getById: getById,
     getFeeds: getFeeds,
     addToFeeds: addToFeeds,

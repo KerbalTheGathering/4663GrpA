@@ -93,7 +93,7 @@ function getMyNews (successCallback)
     {
         openDatabase().then((db) =>
         {
-            var objectStore = openObjectStore(db, "articles");
+            var objectStore = openObjectStore(db, "articles", "readwrite");
             var myNews = [];
             objectStore.openCursor().onsuccess = (event) =>
             {
@@ -103,7 +103,7 @@ function getMyNews (successCallback)
                     myNews.push(cursor.value);
                     cursor.continue();
                 } else {
-                    if (getMyNews.length > 0)
+                    if (myNews.length > 0)
                     {
                         resolve(myNews);
                     } else {
