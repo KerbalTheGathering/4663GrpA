@@ -148,7 +148,7 @@ var getMyNewsFromServer = () =>
         } 
         else if (self.fetch) 
         {
-            fetch("articles.js").then((response) =>
+            fetch("articles.json").then((response) =>
             {
                 return response.json();
             }).then((articles) =>
