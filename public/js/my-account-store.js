@@ -29,6 +29,11 @@ var openDatabase = function()
                 }
             }
         };
+
+        request.onsuccess = function(event) 
+        {
+            resolve(event.target.result);
+        };
     });
 };
 
@@ -111,7 +116,7 @@ function getMyProfile (id)
             };
         }).catch(function()
         {
-            getProfileFromServer().then(function(profile)
+            getProfileFromServer(id).then(function(profile)
             {
                 resolve(profile);
             });
@@ -123,12 +128,12 @@ function getProfileFromServer (id)
 {
     return new Promise((resolve) =>
     {
-        //if (self.$)
-        //{
-            //$.getJSON("/profiles.json", resolve);
-        //} else 
+        if (self.$)
+        {
+            $.getJSON("/profiles.json?id=" + id + "&action=get", resolve);
+        } else 
         if (self.fetch) {
-            fetch("profiles.js").then((response) =>
+            fetch("/profiles.json?id=" + id + "&action=get").then((response) =>
             {
                 for (var i = 0; i < response.length; i++)
                 {
@@ -177,14 +182,13 @@ function getMyFeedsFromServer (id)
 {
     return new Promise((resolve) =>
     {
-        /*
         if (self.$)
         {
-            console.log($.getJSON("/profiles.json?id=" + id + "&action=getfeeds", resolve));
-        } else */
+            $.getJSON("/profiles.json?id=" + id + "&action=getfeeds", resolve);
+        } else 
         if (self.fetch)
         {
-            fetch("profiles.json").then((response) =>
+            fetch("/profiles.json?id=" + id + "&action=getfeeds").then((response) =>
             {
                 return response.json();
             }).then((feeds) =>
