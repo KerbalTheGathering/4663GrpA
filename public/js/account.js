@@ -71,7 +71,7 @@ var renderProfile = function(profile)
     $(savedBody).find('button').append('Go to homepage');
 
     var savedArt = profile["savedArticles"];
-    var news = fetch("/articles.json").then((resp) => // This is bad don't do this.
+    fetch("/articles.json").then((resp) => // This is bad don't do this.
     {
         return resp.json();
     }).then((articles) =>

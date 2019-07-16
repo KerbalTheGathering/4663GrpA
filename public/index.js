@@ -30,12 +30,10 @@ var popArticles = function()
 
 var renderArticles = function(articles)
 {
-    let count = 1;
-    articles.forEach(function(article)
+    for (var i = 0; i < articles.length; i++)
     {
-        console.log(count);
-        renderArticles(article);
-    });
+        renderArticle(articles[i]);
+    }
 };
 
 var renderArticle = function(article)
@@ -43,12 +41,12 @@ var renderArticle = function(article)
     var articleTemplate = $('#article-template').html();
     var art = $(articleTemplate).clone();
     $(art).find('#article-heading').html(article["headline"] + "<br/><span class=\"text-muted\"> Here's a catchy hook to lure you in</span>");
-    $(art).find('#article-lead').html("This is the lead in for the article");
+    $(art).find('#article-lead').html(article["lead"]);
     //We may need to find a better way to set the img then through the css.
     var img = 1;
     $(art).find('#article-img').addClass('article-image' + img);
 
-    $('.breaking').append(article);
+    $('.breaking').append(art);
     console.log("appended article " + img);
 };
 

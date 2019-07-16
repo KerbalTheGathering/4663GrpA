@@ -89,13 +89,14 @@ var updateInObjectStore = (storeName, id, object) =>
 
 var getMyNews = function()
 {
-    return new Promise((resolve) =>
+    return new Promise(function(resolve)
     {
-        openDatabase().then((db) =>
+        openDatabase().then(function(db)
         {
             var objectStore = openObjectStore(db, "articles", "readwrite");
             var articles;
-            objectStore.openCursor().onsuccess = (event) =>
+            var cursor = objectStore.openCursor();
+            cursor.onsuccess = function(event)
             {
                 var cursor = event.target.result;
                 if (cursor)
@@ -107,21 +108,15 @@ var getMyNews = function()
                     {
                         resolve(articles);
                     } else {
-                        getMyNewsFromServer().then((articles) =>
+                        getMyNewsFromServer().then(function(articles)
                         {
-                            openDatabase().then((db) => 
+                            openDatabase().then(function(db) 
                             {
                                 var objectStore = openObjectStore(db, "articles", "readwrite");
-                                articles.forEach((article) =>
-                                {
-                                    objectStore.add(article);
-                                });
-                                /*
                                 for(var i = 0; i < articles.length; i++)
                                 {
                                     objectStore.add(articles[i]);
                                 }
-                                */
                                 resolve(articles);
                             });
                         });
