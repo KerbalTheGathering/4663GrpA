@@ -1,7 +1,7 @@
 var CACHE_NAME = "home-cache-v0.0.1";
 var CACHED_URLS = 
 [
-    "manifest.json",
+    "/public/manifest.json",
     "/js/home.js",
     "/js/my-news-store.js",
     "/js/my-news.js",

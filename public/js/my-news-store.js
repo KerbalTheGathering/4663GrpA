@@ -87,36 +87,42 @@ var updateInObjectStore = (storeName, id, object) =>
     });
 };
 
-function getMyNews (successCallback)
+var getMyNews = function()
 {
     return new Promise((resolve) =>
     {
         openDatabase().then((db) =>
         {
             var objectStore = openObjectStore(db, "articles", "readwrite");
-            var myNews = [];
+            var articles;
             objectStore.openCursor().onsuccess = (event) =>
             {
                 var cursor = event.target.result;
                 if (cursor)
                 {
-                    myNews.push(cursor.value);
+                    articles.push(cursor.value);
                     cursor.continue();
                 } else {
-                    if (myNews.length > 0)
+                    if (articles.length > 0)
                     {
-                        resolve(myNews);
+                        resolve(articles);
                     } else {
-                        getMyNewsFromServer().then((myNews) =>
+                        getMyNewsFromServer().then((articles) =>
                         {
                             openDatabase().then((db) => 
                             {
                                 var objectStore = openObjectStore(db, "articles", "readwrite");
-                                for(var i = 0; i < myNews.length; i++)
+                                articles.forEach((article) =>
                                 {
-                                    objectStore.add(myNews[i]);
+                                    objectStore.add(article);
+                                });
+                                /*
+                                for(var i = 0; i < articles.length; i++)
+                                {
+                                    objectStore.add(articles[i]);
                                 }
-                                resolve(myNews);
+                                */
+                                resolve(articles);
                             });
                         });
                     }
@@ -124,13 +130,13 @@ function getMyNews (successCallback)
             };
         }).catch(() =>
         {
-            getMyNewsFromServer().then((news) =>
+            getMyNewsFromServer().then((articles) =>
             {
-                resolve(news);
+                resolve(articles);
             });
         });
     });
-}
+};
 
 var getMyNewsFromServer = () =>
 {

@@ -1,7 +1,7 @@
 var CACHE_NAME = "account-cache-v0.0.1";
 var immutableRequests = 
 [
-    "manifest.json",
+    "/manifest.json",
     "/css/account.css",
     "/js/account.js",
     "/pages/account/account.html",

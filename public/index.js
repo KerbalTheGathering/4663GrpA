@@ -1,5 +1,6 @@
-//(($) => {          
-    $(document).ready(() =>
+(($) =>
+{
+    $(document).ready(function()
     {
         var carouselTemplate = $('#carousel-template').html();
 
@@ -16,23 +17,40 @@
         }
 
         var articleCount = 3; //Change this to count the user profile's saved articles.
-        var articleTemplate = $('#article-template').html();
+        
+        popArticles();
 
-        for (var j = 0; j < articleCount; j++)
-        {
-            //Change the hard coded text to pull articles from the db or cache from the service worker.
-            var article = $(articleTemplate).clone();
-            $(article).find('#article-heading').html("Article headline #" + j + "<br/><span class=\"text-muted\"> Here's a catchy hook to lure you in</span>");
-            $(article).find('#article-lead').html("This is the lead in for the article");
-            //We may need to find a better way to set the img then through the css.
-            var img = j + 1;
-            $(article).find('#article-img').addClass('article-image' + img);
-
-            $('.breaking').append(article);
-            console.log("appended article " + j);
-        }
     });
-//})(jQuery);
+})(jQuery);
+
+var popArticles = function() 
+{
+    this.getMyNews().then(renderArticles);
+};
+
+var renderArticles = function(articles)
+{
+    let count = 1;
+    articles.forEach(function(article)
+    {
+        console.log(count);
+        renderArticles(article);
+    });
+};
+
+var renderArticle = function(article)
+{
+    var articleTemplate = $('#article-template').html();
+    var art = $(articleTemplate).clone();
+    $(art).find('#article-heading').html(article["headline"] + "<br/><span class=\"text-muted\"> Here's a catchy hook to lure you in</span>");
+    $(art).find('#article-lead').html("This is the lead in for the article");
+    //We may need to find a better way to set the img then through the css.
+    var img = 1;
+    $(art).find('#article-img').addClass('article-image' + img);
+
+    $('.breaking').append(article);
+    console.log("appended article " + img);
+};
 
 var addTopicSubscription = function(userId, topic)
 {

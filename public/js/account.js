@@ -13,7 +13,7 @@ if("serviceWorker" in navigator)
 (($) => {          
     $(document).ready(() =>
     {
-        /* Profile Card */
+        populateMyProfile();
         var profileTemplate = $('#profile-template').html();
         var profileBody = $(profileTemplate).clone();
         $(profileBody).find('button').append('Sign out');
@@ -54,3 +54,29 @@ if("serviceWorker" in navigator)
         $('#saved-body').append(savedBody);
     });
 })(jQuery);
+
+var populateMyProfile = function()
+{
+    this.getMyProfile("devAdmin").then(renderProfile);
+};
+
+var renderProfile = function(profile)
+{
+    console.log("Name: " + profile["name"] + "\n"
+        + "Feeds: " + profile["feeds"]);
+    /* Profile Card */
+    /*
+    var profileTemplate = $('#profile-template').html();
+    var profileBody = $(profileTemplate).clone();
+    $(profileBody).find('button').append('Sign out');
+
+    $(profileBody).find('#prof-name').html("Name: Bob Kerman");
+    var topics = 2; //Change this to a server call.
+    $(profileBody).find('#prof-topic-count').html("Followed Topics: " + topics);
+    var saved = 1; //Change this to a server call.
+    $(profileBody).find('#prof-saved-count').html("Saved articles: " + saved);
+    var showNotifications = false; //Change this to a server call.
+    $(profileBody).find('#prof-notif-toggle').html("Notifications: " + (showNotifications === false ? "No" : "Yes"));
+    $('#profile-body').append(profileBody);
+    */
+};

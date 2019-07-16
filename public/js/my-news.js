@@ -6,8 +6,8 @@ $(document).ready( () =>
 
 var populateMyNews = function()
 {
-    $.getJSON("/articles.json", renderMyNews);
-    //getMyNews(renderMyNews);
+    //$.getJSON("/articles.json", renderMyNews);
+    this.getMyNews().then(renderMyNews);
 };
 
 var renderMyNews = (stories) =>
