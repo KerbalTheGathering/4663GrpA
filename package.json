@@ -24,7 +24,7 @@
     "grunt-eslint": "^21.0.0",
     "grunt-express-server": "^0.5.4",
     "jsdom": "^15.1.1",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.21",
     "lowdb": "^1.0.0",
     "moment": "^2.24.0",
     "web-push": "^3.3.5"
